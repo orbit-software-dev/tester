@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: use job
         id: members
-        uses: AndrewTwydell/repository-members-action@v1.3
+        uses: AndrewTwydell/repository-members-action@v1.4
         with:
           token: ${{ secrets.GH_ACTION_PAT }}
           owner: "AndrewTwydell"

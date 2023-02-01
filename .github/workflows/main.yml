@@ -18,12 +18,6 @@ jobs:
           token: ${{ secrets.GH_ACTION_PAT }}
           owner: "orbit-software-dev"
           repo: "tester"
-      - name: print author name
-        run: echo ${{ github.event.issue.user.login }}
-      - name: print author id
-        run: echo ${{ github.event.issue.user.id }}
-      - name: print comment user
-        run: echo ${{ github.event.comment.user.id }}
       - name: check id in members
         if: contains(steps.members.outputs.members, github.event.comment.user.id)
         run: echo "DOING CI!!!"

@@ -1,0 +1,22 @@
+name: "Members"
+
+on:
+  issue_comment:
+    types: ["created"]
+  workflow_dispatch:
+
+jobs:
+  get-members:
+    # if: ${{ github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    name: Get Members
+    steps:
+      - name: use job
+        id: members
+        uses: AndrewTwydell/repository-members-action@v1.3
+        with:
+          token: ${{ secrets.GH_ACTION_PAT }}
+          owner: "AndrewTwydell"
+          repo: "ibm_zos_cics"
+      - name: get output
+        run: echo "Member list -> ${{ steps.members.outputs.members }}"

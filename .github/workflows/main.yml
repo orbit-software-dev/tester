@@ -7,13 +7,13 @@ on:
 
 jobs:
   get-members:
-    # if: ${{ github.event.issue.pull_request }}
+    if: github.event.issue.pull_request && contains(github.event.comment.body, 'CI')
     runs-on: ubuntu-latest
     name: Get Members
     steps:
       - name: use job
         id: members
-        uses: AndrewTwydell/repository-members-action@v1.4
+        uses: AndrewTwydell/repository-members-action@v1.5
         with:
           token: ${{ secrets.GH_ACTION_PAT }}
           owner: "orbit-software-dev"

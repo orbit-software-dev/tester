@@ -19,6 +19,6 @@ jobs:
           owner: "orbit-software-dev"
           repo: "tester"
       - name: print author
-        run: echo ${{ (github.event.comment.actor }}
+        run: echo ${{ (github.event.actor }}
       # - name: get output
       #   run: echo ${{ steps.members.outputs.members }}

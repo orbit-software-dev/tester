@@ -13,10 +13,10 @@ jobs:
     steps:
       - name: use job
         id: members
-        uses: AndrewTwydell/repository-members-action@v1.8
+        uses: AndrewTwydell/repository-members-action@v1.9
         with:
           token: ${{ secrets.GH_ACTION_PAT }}
           owner: "orbit-software-dev"
           repo: "tester"
       - name: get output
-        run: echo "Member list -> ${{ steps.members.outputs.members }}"
+        run: echo ${{ steps.members.outputs.members }}

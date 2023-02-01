@@ -18,5 +18,7 @@ jobs:
           token: ${{ secrets.GH_ACTION_PAT }}
           owner: "orbit-software-dev"
           repo: "tester"
-      - name: get output
-        run: echo ${{ steps.members.outputs.members }}
+      - name: print author
+        run: echo ${{ (github.event.comment.author }}
+      # - name: get output
+      #   run: echo ${{ steps.members.outputs.members }}

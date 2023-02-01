@@ -16,7 +16,7 @@ jobs:
         uses: AndrewTwydell/repository-members-action@v1.4
         with:
           token: ${{ secrets.GH_ACTION_PAT }}
-          owner: "AndrewTwydell"
-          repo: "ibm_zos_cics"
+          owner: "orbit-software-dev"
+          repo: "tester"
       - name: get output
         run: echo "Member list -> ${{ steps.members.outputs.members }}"

@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: use job
         id: members
-        uses: AndrewTwydell/repository-members-action@v1.9
+        uses: AndrewTwydell/repository-members-action@v1.10
         with:
           token: ${{ secrets.GH_ACTION_PAT }}
           owner: "orbit-software-dev"
@@ -22,5 +22,6 @@ jobs:
         run: echo ${{ github.event.issue.user.login }}
       - name: print author id
         run: echo ${{ github.event.issue.user.id }}
-      # - name: get output
-      #   run: echo ${{ steps.members.outputs.members }}
+      - name: check id in members
+        if: contains(steps.members.outputs.members, github.event.issue.user.id)
+        run: echo "DOING CI!!!"

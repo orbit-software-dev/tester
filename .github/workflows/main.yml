@@ -19,4 +19,4 @@ jobs:
           owner: "orbit-software-dev"
           repo: "tester"
       - name: get output
-        run: echo "Member list -> ${{ steps.members.outputs.members }}"
+        run: echo ${{ steps.members.outputs.members }}

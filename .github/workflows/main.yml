@@ -22,6 +22,8 @@ jobs:
         run: echo ${{ github.event.issue.user.login }}
       - name: print author id
         run: echo ${{ github.event.issue.user.id }}
+      - name: print comment user
+        run: echo ${{ github.event.comment.user.login }}
       - name: check id in members
         if: contains(steps.members.outputs.members, github.event.issue.user.id)
         run: echo "DOING CI!!!"
